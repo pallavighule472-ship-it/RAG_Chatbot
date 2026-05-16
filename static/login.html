@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DocChat — Sign In</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #F6F8FA;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0D1117;
+      -webkit-font-smoothing: antialiased;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #E1E8EF;
+      border-radius: 16px;
+      padding: 40px 36px;
+      width: 100%;
+      max-width: 360px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    }
+    .logo {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, #6366F1, #8B5CF6);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(99,102,241,0.3);
+    }
+    h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.4px; }
+    .subtitle { font-size: 14px; color: #57606A; text-align: center; }
+    form { width: 100%; display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+    input[type="password"] {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid #E1E8EF;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: #0D1117;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    input[type="password"]:focus {
+      border-color: #6366F1;
+      box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #6366F1;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .15s, transform .12s;
+    }
+    button:hover  { background: #4F46E5; transform: translateY(-1px); }
+    button:active { transform: translateY(0); }
+    .error {
+      width: 100%;
+      padding: 9px 12px;
+      background: rgba(239,68,68,0.08);
+      color: #DC2626;
+      border: 1px solid rgba(239,68,68,0.2);
+      border-radius: 8px;
+      font-size: 13px;
+      text-align: center;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      </svg>
+    </div>
+    <h1>DocChat</h1>
+    <p class="subtitle">Enter your password to continue</p>
+    <div class="error" id="errMsg">Incorrect password — try again</div>
+    <form method="POST" action="/login">
+      <input type="password" name="password" placeholder="Password"
+             autofocus autocomplete="current-password">
+      <button type="submit">Sign in →</button>
+    </form>
+  </div>
+  <script>
+    if (new URLSearchParams(location.search).get('error'))
+      document.getElementById('errMsg').style.display = 'block';
+  </script>
+</body>
+</html>

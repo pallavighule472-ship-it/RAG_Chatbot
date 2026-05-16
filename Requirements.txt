@@ -1,0 +1,22 @@
+# Web framework
+fastapi
+uvicorn[standard]
+python-multipart
+
+# LangChain + OpenAI
+langchain
+langchain-core
+langchain-community
+langchain-openai
+langchain-text-splitters
+
+# Vector store
+faiss-cpu
+
+# Document loaders
+pypdf
+
+# Utilities
+python-dotenv
+langsmith
+httpx

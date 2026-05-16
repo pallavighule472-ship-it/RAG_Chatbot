@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+
+# Project Specific (Sensitive/Generated)
+.env
+faiss_index/
+conversations.json
+documents.json
+*.pdf
+*.txt
+!Requirements.txt
+
+# SQLite runtime files
+chatbot.db
+chatbot.db-shm
+chatbot.db-wal
+
+# IDEs
+.vscode/
+.idea/
+
+# Testing
+.pytest_cache/
