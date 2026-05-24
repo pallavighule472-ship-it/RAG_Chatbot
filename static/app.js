@@ -1,6 +1,11 @@
 // ── Marked config ─────────────────────────────────────────────────────
 marked.use({ breaks: true, gfm: true });
 
+// ── Mobile sidebar toggle ─────────────────────────────────────────────
+const _app = document.querySelector('.app');
+document.getElementById('hamburgerBtn').addEventListener('click', () => _app.classList.toggle('sidebar-open'));
+document.getElementById('sidebarOverlay').addEventListener('click', () => _app.classList.remove('sidebar-open'));
+
 // ── State ─────────────────────────────────────────────────────────────
 const state = {
   activeConvId:  null,
