@@ -17,6 +17,6 @@ COPY . .
 # Persistent storage for SQLite DB and FAISS indexes
 RUN mkdir -p /app/storage
 
-EXPOSE 8001
+EXPOSE 8080
 
-CMD ["uvicorn", "RAG_Frontend:app", "--host", "0.0.0.0", "--port", "8001"]
+CMD ["sh", "-c", "uvicorn RAG_Frontend:app --host 0.0.0.0 --port ${PORT:-8080}"]
