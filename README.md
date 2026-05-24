@@ -1,5 +1,5 @@
 # DocChat — RAG Chatbot
-
+**Live Demo:** https://ragchatbot-production-d186.up.railway.app
 > Upload PDF or text documents and chat with them using AI. Answers are grounded strictly in your document's content — no hallucination outside the provided context.
 
 ![Demo](demo.gif)
